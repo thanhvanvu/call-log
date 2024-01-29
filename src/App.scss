@@ -1,0 +1,316 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+
+  justify-content: center;
+  padding-top: 15%;
+  position: relative;
+
+  .modal-question {
+    position: absolute;
+
+    width: 40%;
+    height: 300px;
+    background-color: wheat;
+    border-radius: 15px;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .question-finish {
+      font-size: 40px;
+      line-height: 50px;
+      text-align: center;
+    }
+    .modal-top {
+      // height: 90%;
+      width: auto;
+
+      .question-section {
+        .question {
+          font-size: 40px;
+          line-height: 50px;
+          text-align: center;
+        }
+      }
+
+      .answer-section {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-around;
+
+        .answer {
+          border-radius: 8px;
+          display: inline-block;
+          width: 100px;
+          height: 30px;
+          line-height: 25px;
+          border: 1px solid rgb(70, 161, 231);
+          cursor: pointer;
+          text-align: center;
+          background-color: rgb(70, 161, 231);
+          color: white;
+
+          &:hover {
+            background-color: rgb(52, 135, 198);
+          }
+        }
+      }
+    }
+
+    .modal-bottom {
+      border-top: 1px solid black;
+      padding-top: 20px;
+      display: flex;
+
+      .submit {
+        display: inline-block;
+        width: 120px;
+        height: 40px;
+        border: 1px solid #2dcc70;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 20px;
+        line-height: 35px;
+        cursor: pointer;
+        background-color: #2dcc70;
+        color: white;
+        transition: margin 0.1s ease;
+
+        &:hover {
+          background-color: #0ea84e;
+        }
+      }
+    }
+  }
+}
+
+.slide-center {
+  margin-left: calc((100% - 120px) / 2); /* Half of the button's width */
+}
+
+.slide-right {
+  margin-left: calc(
+    100% - 120px
+  ); /* Adjust based on the container width and button width */
+}
+
+.slide-left {
+  margin-left: 0px;
+}
+
+.selected {
+  background-color: yellow !important;
+  color: black !important;
+  border: 1px solid yellow !important;
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 2199px) {
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+  .App {
+    .modal-question {
+      width: 70%;
+      height: 300px;
+
+      .modal-top {
+        // height: 90%;
+        width: auto;
+
+        .question-section {
+          .question {
+            font-size: 40px;
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .App {
+    .modal-question {
+      width: 70%;
+      height: 300px;
+
+      .modal-top {
+        // height: 90%;
+        width: auto;
+
+        .question-section {
+          .question {
+            font-size: 40px;
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Medium (md) screen */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .App {
+    .modal-question {
+      width: 80%;
+      height: 350px;
+
+      .modal-top {
+        // height: 90%;
+        width: auto;
+
+        .question-section {
+          .question {
+            font-size: 40px;
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Small (sm) screen */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .App {
+    .modal-question {
+      width: 85%;
+      height: 350px;
+
+      .modal-top {
+        // height: 90%;
+        width: auto;
+
+        .question-section {
+          .question {
+            font-size: 30px;
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+
+        .answer-section {
+          .answer {
+            border-radius: 8px;
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            border: 1px solid rgb(70, 161, 231);
+            cursor: pointer;
+            text-align: center;
+            background-color: rgb(70, 161, 231);
+            color: white;
+
+            &:hover {
+              background-color: rgb(52, 135, 198);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Extra small (xs) screen */
+@media only screen and (min-width: 481px) and (max-width: 575px) {
+  /* CSS styles for extra small screens */
+  .App {
+    .modal-question {
+      width: 85%;
+      height: 350px;
+
+      .modal-top {
+        // height: 90%;
+        width: auto;
+
+        .question-section {
+          .question {
+            font-size: 30px;
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+
+        .answer-section {
+          .answer {
+            border-radius: 8px;
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            border: 1px solid rgb(70, 161, 231);
+            cursor: pointer;
+            text-align: center;
+            background-color: rgb(70, 161, 231);
+            color: white;
+
+            &:hover {
+              background-color: rgb(52, 135, 198);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 480px) {
+  .App {
+    .modal-question {
+      width: 85%;
+      height: 350px;
+
+      .modal-top {
+        // height: 90%;
+        width: auto;
+
+        .question-section {
+          .question {
+            font-size: 30px;
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+
+        .answer-section {
+          .answer {
+            border-radius: 8px;
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            border: 1px solid rgb(70, 161, 231);
+            cursor: pointer;
+            text-align: center;
+            background-color: rgb(70, 161, 231);
+            color: white;
+
+            &:hover {
+              background-color: rgb(52, 135, 198);
+            }
+          }
+        }
+      }
+    }
+  }
+}
