@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import './App.scss';
 import { Table } from 'antd';
 import tutorial from "./tutorial.jpg"
+import { FaFacebookSquare } from "react-icons/fa";
+
 
 
 function App() {
   const [files, setFiles] = useState("");
   const [isShowTutorial, setIsShowTutorial] = useState(false)
+  const [name1, setName1] = useState("")
+  const [name2, setName2] = useState("")
 
   function decode(s) {
    let d = new TextDecoder();
    let a = s.split('').map(r => r.charCodeAt());
    return d.decode(new Uint8Array(a));
-}
+  }
 
   const columns = [
   {
@@ -107,11 +111,14 @@ function App() {
   
       const messages = jsonData.messages
 
-      const result = messages.filter((message) =>message.call_duration).reverse()
+      const result = messages.filter(obj => obj.hasOwnProperty('call_duration')).reverse()
 
       // console.log(result)
 
-      result.map((item) =>{
+      result.map((item) => {
+        item.sender_name = decode(item.sender_name)
+        item.content = decode(item.content)
+
         const timestamp = item.timestamp_ms
         let date = new Date(timestamp);
 
@@ -154,66 +161,12 @@ function App() {
         item.call_duration = formattedTime_duration
       })
       
-      // const regexName = /"sender_name"\s*:\s*"([^"]+)"/g;
-      // const regexTime = /"timestamp_ms"\s*:\s*(\d+)/g;
-      // const regexContent = /"content"\s*:\s*"([^"]+)"/g;
-      // const regexCallDuration = /"call_duration"\s*:\s*(\d+)/g;
 
-
-      // let names = [];
-      // let match;
-
-      // let objectsArray = [];
-      // let currentObject = {};
-
-      // // Executing the regular expression on the JSON string
-      // // while ((match = regextCallDuration.exec(e.target.result)) !== null) {
-      // //   console.log(match)
-      // //   names.push(match[1]); // Capture group 1 contains the name value
-      // //   const name = match[1]
-      // //   console.log(name)
-      // //   console.log(decode(name))
-      // // }
-
-      // // Loop through each match for name
-      // while ((match = regexName.exec(jsonData)) !== null) {
-      //   if (!currentObject.name) {
-      //     currentObject.name = match[1]
-      //   } else {
-      //     // If currentObject already has name, push it and start a new object
-      //     objectsArray.push({ ...currentObject });
-      //     currentObject = { name: match[1] };
-      //   }
-      // }
-
-      // // Loop through each match for time
-      // while ((match = regexTime.exec(jsonData)) !== null) {
-      //   if (currentObject.name) {
-      //     currentObject.time = match[1];
-      //   }
-      // }
-
-      // // Loop through each match for content
-      // while ((match = regexContent.exec(jsonData)) !== null) {
-      //   if (currentObject.name) {
-      //     currentObject.content = match[1];
-      //   }
-      // }
-
-      // // Loop through each match for call duration
-      // while ((match = regexCallDuration.exec(jsonData)) !== null) {
-      //   if (currentObject.name) {
-      //     currentObject.duration = match[1];
-      //     // Push the completed object to the array
-      //     objectsArray.push({ ...currentObject });
-      //     // Reset currentObject for next set of matches
-      //     currentObject = {};
-      //   }
-      // }
-
-      // console.log(objectsArray);
-
-      // console.log(decode("Nguy\u00e1\u00bb\u0085n V\u00c3\u00a2n Kh\u00c3\u00a1nh"))
+      
+      const participate = jsonData.participants
+      
+      setName1(decode(participate[0].name))
+      setName2(decode(participate[1].name))
       
       console.log(result)
       setFiles(result);
@@ -234,7 +187,7 @@ function App() {
 
       {files ? (
         <div>
-          <Table scroll={{ y: 800 }} title={() => <h1>Call logs on Facebook Messenger</h1>} columns={columns} dataSource={files} className='table' pagination={false}/>
+          <Table scroll={{ y: 800 }} title={() => <div className='title-table'>Call logs between {name1} and {name2} on <FaFacebookSquare style={{color:"#0866FF", marginLeft:12}}/></div> } columns={columns} dataSource={files} className='table' pagination={false}/>
         </div>
       ) : (
         <p style={{marginTop: 15}}>No file uploaded or invalid JSON file.</p>

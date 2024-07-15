@@ -3,6 +3,7 @@
 }
 
 .table{
+  margin-top: 20px;
   width: 40%;
 }
 
@@ -44,6 +45,18 @@ p{
   height: auto;
 }
 
+.inline {
+    display: inline;
+}
+
+.title-table{
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  
+}
+
 /* ------------------Media query------------------ */
 
 @media (min-width: 240px) {
@@ -70,35 +83,35 @@ p{
 @media (min-width: 1024px) {
   /* Styles for large devices and up */
   .table{
-    width: 80%;
+    width: 100%;
   }
 }
 
 @media (min-width: 1280px) {
   /* Styles for extra large devices and up */
   .table{
-    width: 65%;
+    width: 90%;
   }
 }
 
 @media (min-width: 1536px) {
   /* Styles for 2XL devices and up */
   .table{
-    width: 55%;
+    width: 80%;
   }
 }
 
 @media (min-width: 1920px) {
   /* Styles for 3XL devices and up */
   .table{
-    width: 50%;
+    width: 70%;
   }
 }
 
 @media (min-width: 2560px) {
   /* Styles for 4XL devices and up */
   .table{
-    width: 40%;
+    width: 60%;
   }
 }
 
