@@ -39,3 +39,62 @@ p{
   cursor: pointer;
 }
 
+.tutorial-image{
+  max-width: 100%;
+  height: auto;
+}
+
+/* ------------------Media query------------------ */
+
+@media (min-width: 640px) {
+  /* Styles for small devices and up */
+  .table{
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Styles for medium devices and up */
+  .table{
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Styles for large devices and up */
+  .table{
+    width: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Styles for extra large devices and up */
+  .table{
+    width: 65%;
+  }
+}
+
+@media (min-width: 1536px) {
+  /* Styles for 2XL devices and up */
+  .table{
+    width: 55%;
+  }
+}
+
+@media (min-width: 1920px) {
+  /* Styles for 3XL devices and up */
+  .table{
+    width: 50%;
+  }
+}
+
+@media (min-width: 2560px) {
+  /* Styles for 4XL devices and up */
+  .table{
+    width: 40%;
+  }
+}
+
+@media (min-width: 3840px) {
+  /* Styles for 5XL devices and up */
+}

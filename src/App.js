@@ -224,7 +224,7 @@ function App() {
     <>
       <button className='tutorial'onClick={()=>{setIsShowTutorial(!isShowTutorial)}}>Hướng dẫn tải file JSON về PC</button>
 
-      {isShowTutorial && <img src={tutorial} alt=''/>}
+      {isShowTutorial && <img src={tutorial} className='tutorial-image' alt=''/>}
       
       <h1>Upload JSON File using the button below</h1>
 
