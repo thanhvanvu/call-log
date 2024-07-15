@@ -237,7 +237,7 @@ function App() {
           <Table scroll={{ y: 800 }} title={() => <h1>Call logs on Facebook Messenger</h1>} columns={columns} dataSource={files} className='table' pagination={false}/>
         </div>
       ) : (
-        <p>No file uploaded or invalid JSON file.</p>
+        <p style={{marginTop: 15}}>No file uploaded or invalid JSON file.</p>
       )}
     </>
   );

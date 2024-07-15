@@ -46,6 +46,13 @@ p{
 
 /* ------------------Media query------------------ */
 
+@media (min-width: 240px) {
+  /* Styles for small devices and up */
+  .table{
+    width: 100%;
+  }
+}
+
 @media (min-width: 640px) {
   /* Styles for small devices and up */
   .table{
